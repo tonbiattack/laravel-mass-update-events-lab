@@ -1,0 +1,31 @@
+
+  [39;41;1m FAIL [39;49;22m[39m Tests\Feature\MassUpdateEventsTest[39m
+  [32;1m✓[39;22m[90m [39m[90minstance update dispatches updated event[39m[90m                            [39m [90m0.12s[39m  
+  [31;1m⨯[39;22m[90m [39m[90mmass update dispatches updated event for search indexing[39m[90m            [39m [90m0.01s[39m  
+  [31m────────────────────────────────────────────────────────────────────────────[39m  
+  [41;1m FAILED [49;22m [1mTests\Feature\MassUpdateEventsTest[22m [90m>[39m mass update dispatches updat…   
+[39;1m  検索インデックス更新を担うupdatedイベントが一括更新でも発火すること
+Failed asserting that two arrays are identical.
+  [39;22m[31m-Array &0 [[39m[39;1m
+  [39;22m[31m-    0 => 'after',[39m[39;1m
+  [39;22m[31m-][39m[39;1m
+  [39;22m[32m+Array &0 [][39m[39;1m
+  [39;22m
+
+  at [32mtests/Feature/MassUpdateEventsTest.php[39m:[32m52[39m
+     48▕         });
+     49▕ 
+     50▕         app(ArticleTitleRenamer::class)->rename($article->id, 'after');
+     51▕ 
+  ➜  52▕         self::assertSame(
+     53▕             ['after'],
+     54▕             $updatedTitles,
+     55▕             '検索インデックス更新を担うupdatedイベントが一括更新でも発火すること'
+     56▕         );
+
+  [33m1   [39m[39;1mtests/Feature/MassUpdateEventsTest.php[39;22m:[39;1m52[39;22m
+
+
+  [90mTests:[39m    [31;1m1 failed[39;22m[90m,[39m[39m [39m[32;1m1 passed[39;22m[90m (2 assertions)[39m
+  [90mDuration:[39m [39m0.23s[39m
+
