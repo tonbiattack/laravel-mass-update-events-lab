@@ -11,7 +11,7 @@ final class ArticleTitleRenamer
     public function rename(int $articleId, string $title): void
     {
         Article::query()
-            ->whereKey($articleId)
+            ->findOrFail($articleId)
             ->update(['title' => $title]);
     }
 }
